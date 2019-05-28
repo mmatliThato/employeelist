@@ -1,0 +1,145 @@
+
+  
+  <div class="container">
+    <h2>{{title}}</h2>
+  
+    <form class="form-horizonatal">
+      <div class="form-group">
+        <label for="Name">Name:</label>
+        <input type="Text" class="form-control" id="email" 
+          name="name" [(ngModel)]="model.name" placeholder="Enter Name" >
+        
+      </div>
+      <div class="form-group">
+        <label for="LName">LastName:</label>
+        <input type="text" class="form-control" id="pwd" 
+        name="Lastname" [(ngModel)]="model.Lastname"placeholder="Enter Lastname" >
+      </div>
+      
+      <div class="form-group">
+          <label for="Organisation">Organisation:</label>
+          <input type="Text" class="form-control" id="Organisation"
+          name="Organisation" [(ngModel)]="model.Organisation" placeholder="Enter Organition" >
+        </div>
+        <div class="form-group">
+          <label for="Email">Email:</label>
+          <input type="email" class="form-control" 
+          name="email" [(ngModel)]="model.email" id="email" placeholder="Enter Email">
+        </div>
+
+        <div class="form-group">
+            <label for="Bio">Bio:</label>
+            <input type="Text" class="form-control" id="Bio"
+            name="Bio" [(ngModel)]="model.Bio" placeholder="Enter Bio">
+          </div>
+          <div class="form-group">
+            <label for="img">Image:</label>
+            <input type="text" class="form-control" id="img"
+            name="image" [(ngModel)]="model.image" placeholder="Enter  Image">
+          </div>
+          <div class="form-group">
+              <label for="CNumber">CellNumber:</label>
+              <input type="text" class="form-control" id="img" 
+              name="cellnumber" [(ngModel)]="model.cellnumber"placeholder="Enter  Cell Number">
+            </div>
+
+      <button type="submit" class="btn btn-default" (click)="addemployee()">Save</button>
+    </form>
+
+    <h2>Employeee list</h2>
+                
+    <table class="table table bordered">
+      <thead>
+        <tr>
+          <th width=400> Name</th>
+          <th width=400>Lastname</th>
+          <th width=400>Organisation</th>
+          <th width=400>Email</th>
+          <th width=400>Bio</th>
+          <th width=400>Image</th>
+          <th width=400>CellNumber</th>
+          <th width=200>action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i=index">
+          <td>{{employee.name}}</td>
+          <td>{{employee.Lastname}}</td>
+          <td>{{employee.Organisation}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.Bio}}</td>
+          <td><img src="{{employee.image}}" width="100px" height="100px"></td>
+          <td>{{employee.cellnumber}}</td>
+          
+          <td>
+<a class ="btn btn-success"(click)="editemployee(i)">edit</a>
+<a class ="btn btn-danger" (click)="deleteEmployee(i)">Delete</a>
+          </td>
+      
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br><hr>
+    <h2>update Data</h2>
+    <form class="form-horizonatal">
+        <div class="form-group">
+          <label for="Name">Name:</label>
+          <input type="Text" class="form-control" id="email" 
+            name="name" [(ngModel)]="model2.name" placeholder="Enter Name" >
+          
+        </div>
+        <div class="form-group">
+          <label for="LName">LastName:</label>
+          <input type="text" class="form-control" id="pwd" 
+          name="Lastname" [(ngModel)]="model2.Lastname"placeholder="Enter Lastname" >
+        </div>
+        
+        <div class="form-group">
+            <label for="Organisation">Organisation:</label>
+            <input type="Text" class="form-control" id="Organisation"
+            name="Organisation" [(ngModel)]="model2.Organisation" placeholder="Enter Organition" >
+          </div>
+          <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="email" class="form-control" 
+            name="email" [(ngModel)]="model2.email" id="email" placeholder="Enter Email">
+          </div>
+  
+          <div class="form-group">
+              <label for="Bio">Bio:</label>
+              <input type="Text" class="form-control" id="Bio"
+              name="Bio" [(ngModel)]="model2.Bio" placeholder="Enter Bio">
+            </div>
+            <div class="form-group">
+              <label for="img">Image:</label>
+              <input type="text" class="form-control" id="img"
+              name="image" [(ngModel)]="model2.image" placeholder="Enter  Image">
+            </div>
+            <div class="form-group">
+                <label for="CNumber">CellNumber:</label>
+                <input type="text" class="form-control" id="img" 
+                name="cellnumber" [(ngModel)]="model2.cellnumber" placeholder="Enter  Cell Number">
+              </div>
+  
+        <button type="submit" class="btn btn-default" (click)="updateemployee()">update</button>
+      </form>
+
+
+
+
+  </div>
+  
+  
+
+
+
+  
+  
+  
+  
+
+
+
+
